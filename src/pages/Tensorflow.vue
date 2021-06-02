@@ -34,9 +34,14 @@
           <video ref="videoRef" autoplay="true" width="100" />
         </div>
         <div class="flex flex-wrap justify-center">
+        <div>
+          <input  v-model="imgUrl" @keydown.enter="addUrl" class="border rounded my-2"  placeholder="Paste IMG link here" />
+        </div>
+        </div>
+        <div class="flex flex-wrap justify-center">
           <img
             ref="imgRef"
-            src="https://images.unsplash.com/photo-1567581935884-3349723552ca"
+            v-bind:src="imgSrc"
             width="200"
             crossorigin="anonymous"
           />
@@ -65,6 +70,8 @@ require("@tensorflow/tfjs-backend-webgl");
 const cocoSsd = require("@tensorflow-models/coco-ssd");
 export default {
   setup() {
+    const imgSrc =ref("https://images.unsplash.com/photo-1567581935884-3349723552ca");
+    const imgUrl= ref("");
     const imgRef = ref("");
     const videoRef = ref("");
     const isLoading = ref(false);
@@ -97,6 +104,12 @@ export default {
       tracks.map((track) => track.stop());
       isStreaming.value = false;
     }
+
+    function addUrl() {
+      
+      imgSrc.value = imgUrl.value;
+      imgUrl.value= "";
+    }
     function snapshot() {
       const canvas = document.createElement("canvas");
       const ctx = canvas.getContext("2d");
@@ -114,6 +127,9 @@ export default {
       isStreaming,
       stopStreaming,
       snapshot,
+      imgUrl,
+      addUrl,
+      imgSrc,
     };
   },
 };
