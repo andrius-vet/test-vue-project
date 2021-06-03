@@ -1,8 +1,8 @@
 <template>
-  <section class="flex w-full">
-    <div class="m-auto w-full flex flex-wrap justify-center">
+  <section class=" w-full">
+    <div class="m-auto w-full  flex-wrap justify-center block">
       <h1 class="text-center text-3xl my-4 w-full">Real Time Chat</h1>
-      <div class="border rounded-lg w-10/12 md:w-4/12">
+      <div class="m-auto border rounded-lg w-10/12 md:w-4/12 overflow-y-scroll">
         <div class="h-64 p-2">
           <div
             v-for="chat in state.chats"
@@ -13,7 +13,10 @@
             {{ chat.message }}
           </div>
         </div>
-        <div class="h-8 p-2">
+      </div>
+        
+    </div>
+    <div class="h-8 p-2 block w-10/12 md:w-4/12 m-auto">
           <input
             v-model="state.message"
             placeholder="Start Typing..."
@@ -21,8 +24,6 @@
             @keydown.enter="addMessage"
           />
         </div>
-      </div>
-    </div>
   </section>
 </template>
 
