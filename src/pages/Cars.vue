@@ -1,6 +1,6 @@
 <template>
     <div class="m-auto">
-      <h1 class="text-3xl text-center my-4">Dc Heros {{ carsCount }}</h1>
+      <h1 class="text-3xl text-center my-4">Dc Heros changed {{ carsCount }}</h1>
 <ul>
   <li class="flex justify-between" v-for="(auto, index) in carNames" v-bind:key="index">
   <div>{{auto.car}} </div>
