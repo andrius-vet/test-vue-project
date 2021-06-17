@@ -31,7 +31,8 @@ export default {
         { title: 'Modal', to: '/reusable-modal' },
         { title: 'Chat', to: '/chat' },
         { title: 'UserCrud', to: '/user-crud' },
-         { title: 'Tensorflow', to: '/tensorflow' }
+         { title: 'Tensorflow', to: '/tensorflow' },
+         { title: 'ToDo', to: '/todo' }
       ]
     };
   },

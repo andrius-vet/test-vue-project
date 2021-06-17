@@ -10,6 +10,7 @@ import Chat from './pages/Chat';
 import store from './store/index';
 import UserCrud from './pages/UserCrud';
 import Tensorflow from "./pages/Tensorflow";
+import ToDo from "./pages/ToDo";
 
 const routes = [
   { path: "/cars", component: Cars, meta: { middleware: "auth" } },
@@ -33,7 +34,8 @@ const routes = [
     component: UserCrud,
     meta: { middleware: "auth" },
   },
-  { path: "/tensorflow", component: Tensorflow},
+  { path: "/tensorflow", component: Tensorflow },
+  { path: "/todo", component: ToDo },
 ];
 
 const router = createRouter({
